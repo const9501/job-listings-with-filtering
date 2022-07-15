@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@300;500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+$primaryColor: #5BA4A4FF;
+
+body {
+  font-family: 'Spartan', sans-serif;
+  background-color: #EFFAFAFF;
+}
+
+.header {
+  min-height: 156px;
+  background-image: url(./assets/images/bg-header-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: $primaryColor;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filter-panel {
+  margin-top: -3vh;
+  width: 60vw;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 1.5vh 1vw;
+  border-radius: 5px;
+
+  .badge-container {
+    display: flex;
+    gap: 1vw;
+    flex-wrap: wrap;
+  }
+
+
+  &__clear-btn {
+    margin-left: auto;
+    cursor: pointer;
+    font-weight: 700;
+  }
+
+  &__clear-btn:hover {
+    color: $primaryColor;
+    text-decoration: underline;
+  }
+}
+
+.job-list {
+  &__item {
+    background-color: #fff;
+    border-radius: 5px;
+    margin: 3vh 0;
+    width: 60vw;
+    padding: 3vh 1vw;
+    display: flex;
+    align-items: center;
+
+  }
+
+
+  &__body {
+    margin-left: 2vw;
+    margin-right: 2vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    min-width: 30%;
+
+    @mixin marksStyle ($bgColor) {
+      font-weight: 700;
+      margin-right: .5vw;
+      font-size: 10px;
+      padding: 10px 8px 5px 8px;
+      border-radius: 20px;
+      color: white;
+      background-color: $bgColor;
+    }
+
+    &-new-mark {
+      @include marksStyle($primaryColor)
+    }
+
+    &-featured-mark {
+      @include marksStyle(#3f3e3e)
+    }
+
+    &-title {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    &-company {
+      font-weight: 700;
+      color: $primaryColor;
+      margin-right: 1vw;
+    }
+
+    &-position {
+      font-weight: 700;
+    }
+
+    &-info {
+      display: flex;
+      gap: 1vw;
+      color: #7B8E8EFF;
+      flex-wrap: wrap;
+
+    }
+  }
+
+  &__skills {
+    display: flex;
+    gap: 1vw;
+    margin-left: auto;
+    flex-wrap: wrap;
+  }
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  color: $primaryColor;
+  background-color: #EFFAFAFF;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &__title {
+    padding: .5em;
+  }
+
+  &__remover {
+    background-color: $primaryColor;
+    display: flex;
+    padding-left: .4em;
+    padding-top: .2em;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  &__remover:hover {
+    cursor: pointer;
+    background-color: #3A2C2CFF;
+  }
+
+}
+
+.badge-cleanable {
+  cursor: default;
+}
+
+
+
+
+
+@media (max-width: 1024px) {
+
+  .filter-panel {
+
+    align-items: flex-end;
+
+    .badge-container {
+      row-gap: 2vh;
+      column-gap: 2vw;
+    }
+
+    &__clear-btn {
+      padding: .5em;
+    }
+  }
+
+  .job-list {
+
+    &__item {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 2vh 3vw;
+      margin: 5vh 0;
+
+      img {
+        margin-top: -50px;
+        margin-bottom: 2vh;
+      }
+    }
+
+    &__body {
+      margin-left: 0;
+
+      &-company {
+        margin-right: 3vw;
+      }
+
+      &-info {
+        margin-bottom: 3vh;
+      }
+
+    }
+
+    &__skills {
+      margin-left: 0;
+      row-gap: 1vh;
+    }
+
+  }
+
+}
+
+@media (max-width: 500px) {
+  body {
+    font-size: 14px;
+  }
+
+  .header {
+    min-height: 100px;
+  }
+
+  .filter-panel {
+    width: 80vw;
+    padding: 1vh 2vw;
+    font-size: 12px;
+  }
+
+  .job-list {
+
+    &__item {
+      width: 80vw;
+    }
+
+    &__body {
+      &-info {
+        gap: 2vw;
+      }
+    }
+  }
+}
+
+@media (max-height: 800px) {
+  .job-list {
+    &__item {
+      margin: 7vh 0;
+    }
+
+    &__skills {
+      gap: 2vw;
+    }
+  }
+}
+
