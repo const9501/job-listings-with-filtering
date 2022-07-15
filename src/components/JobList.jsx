@@ -1,8 +1,7 @@
 import React from 'react';
 import JobItem from "./JobItem";
-import {useDispatch, useSelector} from "react-redux";
-import {selectAllPositions, selectFilteredPositions} from "../store/positions/position-selectors";
-import {addFilter} from "../store/filters/filter-actions";
+import {useSelector} from "react-redux";
+import {selectFilteredPositions} from "../store/positions/position-selectors";
 import {selectAllFilters} from "../store/filters/filter-selectors";
 
 

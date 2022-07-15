@@ -1,6 +1,6 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
-import {ADD_FILTER, addFilter} from "../store/filters/filter-actions";
+import {addFilter} from "../store/filters/filter-actions";
 import {ReactComponent as RemoveIcon} from "../assets/images/icon-remove.svg";
 
 
